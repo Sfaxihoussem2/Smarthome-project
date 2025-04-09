@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Home Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Mulish:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Start Header -->
+    <header class="p-3">
+      <div class="container-fluid">
+        <div class="row">
+          <div
+            class="prof col-12 col-lg-3 mt-4 mt-lg-0 d-flex align-items-center justify-content-center justify-content-lg-start gap-4 order-2 order-lg-0 position-relative"
+          >
+            <div class="profile p-3 position-absolute rounded-4">
+              <p class="text-secondary fw-bold mb-3">Currently In</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <img src="imgs/avatar.png" class="profilePic me-2" alt="" />
+                <div class="flex-grow-1">
+                  <h5 class="userName text-white">Walid Zakan</h5>
+                  <span class="permission text-white-50">Admin</span>
+                </div>
+                <i class="fa-solid fa-check h5 text-white m-0"></i>
+              </div>
+              <p class="text-secondary fw-bold mb-3 mt-4">Change User</p>
+              <div class="users d-flex justify-content-center gap-3">
+                <img src="imgs/dad.png" class="rounded-circle" alt="" />
+                <img src="imgs/mom.png" class="rounded-circle" alt="" />
+                <img src="imgs/sis.png" class="rounded-circle" alt="" />
+                <img src="imgs/sis2.png" class="rounded-circle" alt="" />
+                <img
+                  src="imgs/avatar.png"
+                  class="rounded-circle d-none"
+                  alt=""
+                />
+              </div>
+              <p class="text-secondary fw-bold mt-4">More Options</p>
+              <div>
+                <ul class="mt-3 mb-0">
+                  <li class="my-3">
+                    <i class="fa-solid fa-user text-white me-2"></i>
+                    <a href="#" class="text-white">Profile</a>
+                  </li>
+                  <li class="my-3">
+                    <i class="fa-solid fa-gear settings text-white"></i
+                    ><a href="#" class="text-white">Settings</a>
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-arrow-right-from-bracket text-white me-2"
+                    ></i
+                    ><a href="#" class="text-white">Log Out</a>
+                  </li>
+                </ul>
+                <button
+                  class="save d-block mt-3 mx-auto py-2 px-4 fw-medium rounded-3 border-0 text-white"
+                >
+                  Save
+                </button>
+              </div>
+            </div>
+            <img src="imgs/avatar.png" class="avatar rounded-circle" alt="" />
+            <span class="mainUserName h5 m-0 text-white">Walid Zakan</span>
+            <i
+              class="fa-solid fa-chevron-down text-white profileTog h5 m-0"
+            ></i>
+          </div>
+          <div class="col-9 col-sm-10 col-lg-7 ms-lg-0">
+            <div class="search position-relative">
+              <input
+                type="search"
+                class="border-0 p-2 ps-5 rounded-4 w-100"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+          <div
+            class="col-3 col-sm-2 icons d-flex justify-content-between justify-content-lg-evenly"
+          >
+            <div
+              class="mode rounded-3 d-flex justify-content-center align-items-center"
+            >
+              <i class="fa-solid fa-sun lightMode text-white h5 m-0"></i>
+              <i class="fa-solid fa-moon darkMode text-black h5 m-0 d-none"></i>
+            </div>
+            <div
+              class="rounded-3 d-flex justify-content-center align-items-center position-relative"
+            >
+              <i
+                class="fa-regular fa-bell fa-lg text-white h5 m-0 position-relative notif-tog"
+              ></i>
+              <div class="notifications position-absolute rounded-4 text-white">
+                <div
+                  class="d-flex justify-content-between align-items-center p-3"
+                >
+                  <h5 class="m-0" id="nof-cls">Notifications</h5>
+                  <i
+                    class="fa-solid fa-check-double h5 m-0 text-info read-all" title="Read All"
+                  ></i>
+
+                </div>
+                <div
+                  class="no-notifications d-flex flex-column justify-content-center align-items-center gap-3 d-none"
+                >
+                  <img src="imgs/No Notification illustration.svg" alt="" />
+                  <p class="fw-bold h4">No Notifications Yet</p>
+                  <p class="text-center text-white-50">
+                    No Notifications Yet When you get notifications, they’ll
+                    show up here
+                  </p>
+                  <button
+                    class="d-block mx-auto py-2 px-4 fw-medium rounded-3 border-0 text-white"
+                  >
+                    Refresh
+                  </button>
+                </div>
+                <div
+                  class="notifications-container overflow-y-scroll p-3 position-relative"
+                >
+                  <div class="row today">
+                    <p class="fw-bold mb-1">Today</p>
+                    <div
+                      class="col- d-flex justify-content-between align-items-center p-2 rounded-4 read"
+                    >
+                      <img src="imgs/avatar.png" class="me-2" alt="" />
+                      <div class="flex-grow-1">
+                        <h6 class="m-0 mb-1">blablalblabla</h6>
+                        <span class="time text-white-50">34 minutes ago</span>
+                      </div>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical actionsToggler"
+                      ></i>
+                    </div>
+                    <div
+                      class="col- d-flex justify-content-between align-items-center p-2 rounded-4"
+                    >
+                      <img src="imgs/dad.png" class="me-2" alt="" />
+                      <div class="flex-grow-1">
+                        <h6 class="m-0 mb-1">blablalblabla</h6>
+                        <span class="time text-white-50">55 minutes ago</span>
+                      </div>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical actionsToggler"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="row mt-3 yesterday">
+                    <p class="fw-bold mb-1">Yesterday</p>
+                    <div
+                      class="col- d-flex justify-content-between align-items-center p-2 rounded-4"
+                    >
+                      <img src="imgs/dad.png" class="me-2" alt="" />
+                      <div class="flex-grow-1">
+                        <h6 class="m-0 mb-1">blablalblabla</h6>
+                        <span class="time text-white-50"
+                          >Yesterday at 8:43 PM</span
+                        >
+                      </div>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical actionsToggler"
+                      ></i>
+                    </div>
+                    <div
+                      class="col- d-flex justify-content-between align-items-center p-2 rounded-4 read"
+                    >
+                      <img src="imgs/avatar.png" class="me-2" alt="" />
+                      <div class="flex-grow-1">
+                        <h6 class="m-0 mb-1">blablalblabla</h6>
+                        <span class="time text-white-50"
+                          >Yesterday at 10:22 PM</span
+                        >
+                      </div>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical actionsToggler"
+                      ></i>
+                    </div>
+                    <div
+                      class="col- d-flex justify-content-between align-items-center p-2 rounded-4"
+                    >
+                      <img src="imgs/sis.png" class="me-2" alt="" />
+                      <div class="flex-grow-1">
+                        <h6 class="m-0 mb-1">blablalblabla</h6>
+                        <span class="time text-white-50"
+                          >Yesterday at 7:05 AM</span
+                        >
+                      </div>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical actionsToggler"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="row mt-3 last-week">
+                    <p class="fw-bold mb-1">Last Week</p>
+                    <div
+                      class="col- d-flex justify-content-between align-items-center p-2 rounded-4 read"
+                    >
+                      <img src="imgs/dad.png" class="me-2" alt="" />
+                      <div class="flex-grow-1">
+                        <h6 class="m-0 mb-1">blablalblabla</h6>
+                        <span class="time text-white-50"
+                          >Monday at 11:43 PM</span
+                        >
+                      </div>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical actionsToggler"
+                      ></i>
+                    </div>
+                    <div
+                      class="col- d-flex justify-content-between align-items-center p-2 rounded-4"
+                    >
+                      <img src="imgs/avatar.png" class="me-2" alt="" />
+                      <div class="flex-grow-1">
+                        <h6 class="m-0 mb-1">blablalblabla</h6>
+                        <span class="time text-white-50"
+                          >Tuesday at 10:22 AM</span
+                        >
+                      </div>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical actionsToggler"
+                      ></i>
+                    </div>
+                    <div
+                      class="col- d-flex justify-content-between align-items-center p-2 rounded-4 read"
+                    >
+                      <img src="imgs/mom.png" class="me-2" alt="" />
+                      <div class="flex-grow-1">
+                        <h6 class="m-0 mb-1">blablalblabla</h6>
+                        <span class="time text-white-50"
+                          >Thursday at 7:05 PM</span
+                        >
+                      </div>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical actionsToggler"
+                      ></i>
+                    </div>
+                    <div
+                      class="col- d-flex justify-content-between align-items-center p-2 rounded-4 read"
+                    >
+                      <img src="imgs/sis2.png" class="me-2" alt="" />
+                      <div class="flex-grow-1">
+                        <h6 class="m-0 mb-1">blablalblabla</h6>
+                        <span class="time text-white-50"
+                          >Thursday at 12:05 PM</span
+                        >
+                      </div>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical actionsToggler"
+                      ></i>
+                    </div>
+                    <div
+                      class="col- d-flex justify-content-between align-items-center p-2 rounded-4"
+                    >
+                      <img src="imgs/avatar.png" class="me-2" alt="" />
+                      <div class="flex-grow-1">
+                        <h6 class="m-0 mb-1">blablalblabla</h6>
+                        <span class="time text-white-50"
+                          >Friday at 2:00 PM</span
+                        >
+                      </div>
+                      <i
+                        class="fa-solid fa-ellipsis-vertical actionsToggler"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="actions position-absolute p-3 rounded-3">
+                  <div class="position-relative">
+                    <i
+                      class="fa-solid fa-circle-chevron-down position-absolute text-black h4 closeActions translate-middle-x"
+                    ></i>
+                  </div>
+                  <a
+                    href="#"
+                    class="removeNotif text-black d-block mt-3 fw-medium"
+                    ><i class="fa-solid fa-trash-can me-2"></i> Remove this
+                    notification</a
+                  >
+                  <a
+                    href="#"
+                    class="readNotif text-black d-block mt-3 fw-medium"
+                    ><i class="fa-solid fa-check me-2"></i> Mark as read</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container-fluid">
+      <div class="page mt-4 d-flex pb-1">
+        <aside
+          class="p-4 d-flex gap-4 justify-content-between align-items-center flex-md-column-reverse position-fixed"
+        >
+          <ul>
+            <li class="mt-md-4">
+              <a href="index.html">
+                <img src="imgs/Group 72.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="imgs/Group 30 Copy 6.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="#"> <img src="imgs/Group 30 Copy 8.svg" alt="" /> </a>
+            </li>
+            <li>
+              <a href="#"> <img src="imgs/Group 30 Copy 7.svg" alt="" /> </a>
+            </li>
+            <li>
+              <a href="#"> <img src="imgs/Group 30 Copy 9.svg" alt="" /> </a>
+            </li>
+            <li>
+              <a href="#"> <img src="imgs/Group 30 Copy 10.svg" alt="" /> </a>
+            </li>
+          </ul>
+          <i
+            class="fa-solid fa-arrow-right-from-bracket h4 text-danger toggler-off"
+          ></i>
+        </aside>
+        <div class="toggler-bar toggler-on rounded-4 position-fixed"></div>
+        <main class="flex-grow-1 d-flex gap-5 flex-column flex-lg-row">
+          <div class="left-side">
+            <div
+              class="welcome p-4 rounded-4 position-relative overflow-hidden"
+            >
+              <h1 class="text-white">Hi Houssem!</h1>
+              <p class="w-50 fw-medium">
+                Welcome Home! The air quality is good & Fresh you can go out
+                today
+              </p>
+              <div>
+                <p class="h3 text-white">
+                  +25°C <i class="fa-solid fa-cloud"></i>
+                </p>
+                <span class="d-block text-white">Outdoor temperature</span>
+                <span class="fw-light text-white-50">Fuzzy cloudy weather</span>
+              </div>
+            </div>
+            <div class="control mt-4">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                  <div class="col-7 col-sm-5">
+                    <h3 class="fw-light text-white-50">Walid's Home</h3>
+                  </div>
+                  <div
+                    class="col col-sm-4 col-lg-3 text-white d-flex justify-content-evenly align-items-center"
+                  >
+                    <div>
+                      <i class="fa-solid fa-droplet text-primary"></i
+                      ><span> 35%</span>
+                    </div>
+                    <div>
+                      <span> 25°C </span>
+                      <i
+                        class="fa-solid fa-temperature-three-quarters text-danger"
+                      ></i>
+                    </div>
+                  </div>
+                  <div
+                    class="col-12 d-flex justify-content-center justify-content-sm-end col-sm-3 col-lg-4"
+                  >
+                    <div class="dropdown border-0 rounded-3">
+                      <a
+                        class="btn text-white dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Living Room
+                      </a>
+
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item" href="#thermometer"
+                            >Living Room</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#thermometer"
+                            >Kitchen Room</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#thermometer"
+                            >Dining Room</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#thermometer"
+                            >Bedroom</a
+                          >
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#thermometer"
+                            >Bathroom</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row options justify-content-between gap-3 mt-4">
+                  <div class="col-12 col-md option text-white rounded-4 p-3">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span>OFF</span>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="Switcher"
+                        />
+                      </div>
+                    </div>
+                    <img src="imgs/icons8-fridge-50.png" class="my-3" alt="" />
+                    <p class="m-0">Refrigerator</p>
+                  </div>
+                  <div
+                    class="col-12 col-md option text-white rounded-4 p-3 checked"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span>ON</span>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="Switcher"
+                          checked
+                        />
+                      </div>
+                    </div>
+                    <img
+                      src="imgs/icons8-temperatures-64.png"
+                      class="my-3"
+                      alt=""
+                    />
+                    <p class="m-0">Temperature</p>
+                  </div>
+                  <div class="col-12 col-md option text-white rounded-4 p-3">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span>OFF</span>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="Switcher"
+                        />
+                      </div>
+                    </div>
+                    <img
+                      src="imgs/icons8-air-conditioner-64.png"
+                      class="my-3"
+                      alt=""
+                    />
+                    <p class="m-0">Air Conditional</p>
+                  </div>
+                  <div
+                    class="col-12 col-md option text-white rounded-4 p-3 checked"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span>ON</span>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="Switcher"
+                          checked
+                        />
+                      </div>
+                    </div>
+                    <img
+                      src="imgs/icons8-lightbulb-64.png"
+                      class="my-3"
+                      alt=""
+                    />
+                    <p class="m-0">Lights</p>
+                  </div>
+                  <div class="col-12 col-md option text-white rounded-4 p-3">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span>OFF</span>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="Switcher"
+                        />
+                      </div>
+                    </div>
+                    <img
+                      src="imgs/icons8-camera-64.png"
+                      class="my-3"
+                      alt=""
+                    />
+                    <p class="m-0">Camera</p>
+                </div>
+              </div>
+            </div>
+            <div class="thermometer mt-4 rounded-4 p-3 pb-3" id="thermometer">
+              <div class="row justify-content-between align-items-center pb-3">
+                <div class="col d-flex gap-3 align-items-center">
+                  <div
+                    class="icon d-flex justify-content-center align-items-center rounded-circle"
+                  >
+                    <img src="imgs/icons8-temperatures-64.png" alt="" />
+                  </div>
+                  <h4 class="text-white-50 fw-light">
+                    Living Room Temperature
+                  </h4>
+                </div>
+              </div>
+              <div
+                class="row counter justify-content-center align-items-center mb-2 mt-5"
+              >
+                <div
+                  class="col-2 pe-0 d-flex justify-content-start align-self-end align-self-sm-auto"
+                >
+                  <div
+                    class="minus text-white-50 rounded-4 d-flex justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-minus h2 m-0"></i>
+                  </div>
+                </div>
+                <div
+                  class="col-8 d-flex justify-content-center position-relative"
+                >
+                  <img
+                    src="imgs/degs.png"
+                    class="protractor position-absolute z-n1"
+                    alt=""
+                  />
+                  <div
+                    class="shadow d-flex flex-column justify-content-center align-items-center rounded-circle position-relative"
+                  >
+                    <div
+                      class="deg d-flex flex-column justify-content-center align-items-center rounded-circle position-relative"
+                    >
+                      <h1 class="text-white value">25°C</h1>
+                      <p>Celsius</p>
+                    </div>
+                    <!-- <div class="gradient rounded-circle d-flex justify-content-center align-items-center position-absolute"></div> -->
+                  </div>
+                </div>
+                <div
+                  class="col-2 ps-0 d-flex justify-content-end align-self-end align-self-sm-auto"
+                >
+                  <div
+                    class="plus text-white rounded-4 d-flex justify-content-center align-items-center"
+                  >
+                    <i class="fa-solid fa-plus h2 m-0"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-side rounded-4">
+            <div class="control">
+              <div class="row align-items-center">
+                <div class="col-8 col-sm-9">
+                  <h3 class="fw-light text-white-50">My Devices</h3>
+                </div>
+                <div class="col-4 col-sm-3">
+                  <div
+                    class="status text-white text-center d-flex justify-content-between overflow-hidden rounded-4"
+                  >
+                    <span class="px-2 w-50 on">ON</span>
+                    <span class="px-2 w-50 off">OFF</span>
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row devices justify-content-between gap-4 mt-4">
+                  <div class="col-12 device device1 text-white rounded-4 p-3">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <img
+                        src="imgs/icons8-washing-machine-80.png"
+                        class="my-2"
+                        alt=""
+                      />
+                      <div class="d-flex">
+                        <span>ON</span>
+                        <div class="ms-2 form-check form-switch">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                            id="Switcher"
+                            checked
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <p class="m-0">Washing Machine</p>
+                  </div>
+                  <div class="col-12 device device2 text-white rounded-4 p-3">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <img
+                        src="imgs/icons8-router-64.png"
+                        class="my-2"
+                        alt=""
+                      />
+                      <div class="d-flex">
+                        <span>ON</span>
+                        <div class="ms-2 form-check form-switch">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                            id="Switcher"
+                            checked
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <p class="m-0">Refrigerator</p>
+                  </div>
+                  <div class="col-12 device device3 text-white rounded-4 p-3">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <img
+                        src="imgs/icons8-music-record-50.png"
+                        class="my-2"
+                        alt=""
+                      />
+                      <div class="d-flex">
+                        <span>ON</span>
+                        <div class="ms-2 form-check form-switch">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                            id="Switcher"
+                            checked
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <p class="m-0">Refrigerator</p>
+                  </div>
+                  <div class="col-12 device device4 text-white rounded-4 p-3">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <img
+                        src="imgs/icons8-table-lights-50.png"
+                        class="my-2"
+                        alt=""
+                      />
+                      <div class="d-flex">
+                        <span>ON</span>
+                        <div class="ms-2 form-check form-switch">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                            id="Switcher"
+                            checked
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <p class="m-0">Refrigerator</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="members mt-5">
+              <h3 class="fw-light text-white-50">Members</h3>
+              <div class="container-fluid">
+                <div class="row text-center rounded-5 p-3 mt-4">
+                  <div class="col">
+                    <img src="imgs/avatar.png" class="rounded-circle" alt="" />
+                    <p class="text-white mb-1 mt-2 fw-medium">Walid</p>
+                    <span class="text-white-50">Admin</span>
+                  </div>
+                  <div class="col">
+                    <img src="imgs/sis.png" class="rounded-circle" alt="" />
+                    <p class="text-white mb-1 mt-2 fw-medium">Sister</p>
+                    <span class="text-white-50">Full Access</span>
+                  </div>
+                  <div class="col">
+                    <img src="imgs/sis2.png" class="rounded-circle" alt="" />
+                    <p class="text-white mb-1 mt-2 fw-medium">Sister</p>
+                    <span class="text-white-50">Full Access</span>
+                  </div>
+                  <div class="col">
+                    <img src="imgs/dad.png" class="rounded-circle" alt="" />
+                    <p class="text-white mb-1 mt-2 fw-medium">Dad</p>
+                    <span class="text-white-50">Full Access</span>
+                  </div>
+                  <div class="col">
+                    <img src="imgs/mom.png" class="rounded-circle" alt="" />
+                    <p class="text-white mb-1 mt-2 fw-medium">Mom</p>
+                    <span class="text-white-50">Full Access</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="power-consuming mt-4">
+              <!-- <div class="container-fluid"> -->
+              <div class="row">
+                <h3 class="fw-light text-white-50">Power Consumed</h3>
+              </div>
+              <div class="graph mt-4 rounded-5 p-3">
+                <div class="row align-items-center">
+                  <div class="col d-flex align-items-center">
+                    <i
+                      class="fa-regular fa-circle-dot text-danger h5 m-0 me-2"
+                    ></i>
+                    <h6 class="text-white m-0">Electricity Consumed</h6>
+                  </div>
+                  <div class="col-auto text-end">
+                    <h6 class="text-danger m-0">73% Spending</h6>
+                  </div>
+                </div>
+                <div class="row justify-content-between mt-4 px-3">
+                  <div
+                    class="col-1 d-flex flex-column justify-content-between align-items-center"
+                  >
+                    <span>75%</span>
+                    <span>50%</span>
+                    <span>25%</span>
+                    <span>0</span>
+                  </div>
+                  <div class="col-11">
+                    <img src="imgs/graph.png" class="img-fluid" alt="" />
+                  </div>
+                </div>
+                <div class="row months">
+                  <div class="col d-flex justify-content-around ms-4">
+                    <span>Jan</span>
+                    <span>Feb</span>
+                    <span>Mar</span>
+                    <span>Apr</span>
+                    <span>May</span>
+                    <span>June</span>
+                    <span>July</span>
+                    <span>Aug</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- </div> -->
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

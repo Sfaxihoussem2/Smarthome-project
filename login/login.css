@@ -1,0 +1,142 @@
+body {
+  background-color: #131220;
+  font-family: 'Mulish', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 20px;
+}
+
+.login-card {
+  background-color: #1a192f;
+  border-radius: 16px;
+  box-shadow: -5px -5px 12px #232239, 6px 6px 12px #121120, inset 0px 0px 3px #202124;
+  padding: 30px;
+  color: #fff;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  color: #7230f9;
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  color: #9cb4d6;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #9cb4d6;
+  font-size: 14px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #26243f;
+  background-color: #131220;
+  color: #fff;
+  box-shadow: inset 0px 0px 3px #202124;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #7230f9;
+  box-shadow: 0 0 0 2px rgba(114, 48, 249, 0.2);
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-check-input {
+  margin-right: 8px;
+}
+
+.form-check-label {
+  color: #9cb4d6;
+  font-size: 14px;
+}
+
+.login-actions {
+  margin-bottom: 20px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #7230f9;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #5f28d1;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.login-options a {
+  color: #0180f5;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-options a:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.alert-success {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.d-none {
+  display: none;
+}
